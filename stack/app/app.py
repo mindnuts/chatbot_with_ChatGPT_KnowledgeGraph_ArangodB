@@ -141,7 +141,7 @@ def human_like_response(user_input):
         {"role": "system", "content": content_hlr}
     ]
     messages.append({"role": "user", "content": user_input})
-    response = client.chat.completions.create(model='gpt-4o', messages=messages, temperature=0.5)
+    response = client.chat.completions.create(model='gpt-4o-mini', messages=messages, temperature=0.5)
     reply = response.choices[0].message.content
     messages.append({"role": "assistant", "content": reply})
     return reply
@@ -157,7 +157,7 @@ def is_aql_query(query):
 def HealthCareChatbot(user_input):    
     messages = [{"role": "system", "content": content_hcb}]
     messages.append({"role": "user", "content": user_input})
-    completion = client.chat.completions.create(model='gpt-4o', messages=messages, temperature=0.5)
+    completion = client.chat.completions.create(model='gpt-4o-mini', messages=messages, temperature=0.5)
     reply = completion.choices[0].message.content    
     messages.append({"role": "assistant", "content": reply})
     regex = r"^```aql([\s\w\S]+)```"
