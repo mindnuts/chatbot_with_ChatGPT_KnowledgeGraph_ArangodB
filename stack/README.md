@@ -18,5 +18,3 @@ arangorestore \
   --input-directory "/dump" \
   --create-database
 ```
-
-#### Hello world
